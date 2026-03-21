@@ -57,6 +57,7 @@
 </style>
 </head>
 <body>
+<iframe name="hiddenFrame" style="display:none;"></iframe>
 <div class="card">
   <div class="badge">Free Consultation</div>
   <h1>Get Your Case Reviewed</h1>
@@ -109,15 +110,12 @@
   </div>
 </div>
 <script>
-  // ===== ЗАМЕНИ НА URL СВОЕГО APPS SCRIPT =====
   var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw40PbDTnFe32Docr47vXUlO78xMAp_GzfhRXuOXuIOkBeCUsrm4SBMTcH9tiABcBdi/exec";
-  // =============================================
 
   document.getElementById('consultForm').addEventListener('submit', function(e) {
     e.preventDefault();
+
     var btn = document.getElementById('submitBtn');
-    var errorMsg = document.getElementById('errorMsg');
-    errorMsg.style.display = 'none';
     btn.textContent = 'Sending\u2026';
     btn.classList.add('loading');
 
@@ -130,21 +128,27 @@
       description: document.getElementById('description').value
     };
 
-    fetch(APPS_SCRIPT_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    })
-    .then(function() {
+    var form = document.createElement('form');
+    form.method = 'POST';
+    form.action = APPS_SCRIPT_URL;
+    form.target = 'hiddenFrame';
+
+    Object.keys(data).forEach(function(key) {
+      var input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = key;
+      input.value = data[key];
+      form.appendChild(input);
+    });
+
+    document.body.appendChild(form);
+    form.submit();
+    document.body.removeChild(form);
+
+    setTimeout(function() {
       document.getElementById('consultForm').style.display = 'none';
       document.getElementById('successMsg').style.display = 'block';
-    })
-    .catch(function() {
-      btn.textContent = 'Request Free Consultation \u2192';
-      btn.classList.remove('loading');
-      errorMsg.style.display = 'block';
-    });
+    }, 1500);
   });
 
   document.getElementById('phone').addEventListener('input', function() {
