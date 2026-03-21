@@ -15,27 +15,21 @@
     --accent: #c0392b; --accent-light: #e74c3c; --radius: 10px;
   }
   body { background: var(--bg); min-height: 100vh; font-family: 'DM Sans', sans-serif; color: var(--text); overflow-x: hidden; }
-
-  /* === TOP BAR === */
-  .top-bar { background: var(--accent); text-align: center; padding: 8px 20px; font-size: 12px; color: #fff; letter-spacing: 0.02em; }
+  body::before { content: ''; position: fixed; top: -200px; left: -200px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(192,57,43,0.08) 0%, transparent 70%); pointer-events: none; }
+  .top-bar { background: var(--accent); text-align: center; padding: 8px 20px; font-size: 12px; color: #fff; }
   .top-bar span { opacity: 0.7; margin: 0 6px; }
-
-  /* === NAV === */
   .nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 40px; border-bottom: 1px solid var(--border); background: var(--bg); position: sticky; top: 0; z-index: 100; }
   .logo { font-size: 20px; font-weight: 700; color: var(--text); text-decoration: none; }
   .logo em { color: var(--accent); font-style: normal; }
   .nav-links { display: flex; gap: 28px; align-items: center; }
   .nav-links a { color: var(--text-sub); text-decoration: none; font-size: 13.5px; font-weight: 400; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--text); }
+  .nav-links a:hover, .nav-links a.active { color: var(--text); }
+  .nav-right { display: flex; align-items: center; gap: 20px; }
   .nav-phone { display: flex; align-items: center; gap: 8px; color: var(--text); font-size: 14px; font-weight: 500; text-decoration: none; }
   .nav-phone img { width: 18px; height: 13px; border-radius: 2px; }
   .nav-cta { background: var(--accent); color: #fff; border: none; padding: 10px 20px; border-radius: var(--radius); font-size: 13px; font-weight: 500; cursor: pointer; text-decoration: none; transition: background 0.2s; }
   .nav-cta:hover { background: var(--accent-light); }
-
-  /* === HERO === */
   .hero { display: flex; align-items: flex-start; justify-content: center; gap: 60px; padding: 60px 40px; max-width: 1200px; margin: 0 auto; }
-
-  /* === LEFT BLOCK === */
   .hero-left { flex: 1; max-width: 520px; padding-top: 20px; }
   .hero-left h1 { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 700; line-height: 1.15; margin-bottom: 16px; }
   .hero-left h1 span { color: var(--accent-light); text-shadow: 0 0 40px rgba(231,76,60,0.3); }
@@ -47,15 +41,11 @@
   .btn-primary:hover { background: var(--accent-light); transform: translateY(-1px); }
   .btn-secondary { background: transparent; color: var(--text); border: 1px solid var(--border); padding: 14px 28px; border-radius: var(--radius); font-size: 14px; font-weight: 500; cursor: pointer; text-decoration: none; transition: border-color 0.2s; }
   .btn-secondary:hover { border-color: var(--text-muted); }
-
-  /* === STATS === */
   .stats { display: flex; gap: 16px; }
   .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px; flex: 1; }
   .stat-value { font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
   .stat-value span { color: var(--accent-light); }
   .stat-label { font-size: 12px; color: var(--text-muted); line-height: 1.4; }
-
-  /* === FORM CARD === */
   .hero-right { flex: 0 0 480px; }
   .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 36px 32px; width: 100%; position: relative; animation: fadeUp 0.6s ease both; }
   .card::before { content: ''; position: absolute; top: 0; left: 32px; right: 32px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent), transparent); opacity: 0.6; }
@@ -92,8 +82,10 @@
   .success-msg h2 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--text); margin-bottom: 8px; }
   .success-msg p { font-size: 13.5px; color: var(--text-muted); line-height: 1.6; }
   .error-msg { display: none; text-align: center; color: var(--accent-light); font-size: 13px; margin-top: 10px; }
-
-  /* === RESPONSIVE === */
+  .footer { padding: 40px; text-align: center; font-size: 13px; color: var(--text-muted); border-top: 1px solid var(--border); }
+  .footer a { color: var(--text-sub); text-decoration: none; margin: 0 12px; }
+  .footer a:hover { color: var(--text); }
+  .footer-copy { margin-top: 16px; font-size: 12px; }
   @media (max-width: 960px) {
     .hero { flex-direction: column; align-items: center; gap: 40px; padding: 40px 20px; }
     .hero-left { max-width: 100%; text-align: center; padding-top: 0; }
@@ -115,90 +107,63 @@
 </style>
 </head>
 <body>
-
-<!-- TOP BAR -->
-<div class="top-bar">
-  Only cases with losses from $2,000+ <span>&bull;</span> Free consultation <span>&bull;</span> Trusted by thousands across Canada
-</div>
-
-<!-- NAV -->
+<div class="top-bar">Only cases with losses from $2,000+ <span>&bull;</span> Free consultation <span>&bull;</span> Trusted by thousands across Canada</div>
 <nav class="nav">
-  <a href="#" class="logo">Refund<em>Expert</em>Ca</a>
+  <a href="index.html" class="logo">Refund<em>Expert</em>Ca</a>
   <div class="nav-links">
-    <a href="#">Home</a>
-    <a href="#">How It Works</a>
-    <a href="#">Scam Types</a>
-    <a href="#">Why Us</a>
-    <a href="#">FAQ</a>
-    <a href="#">Contact</a>
+    <a href="index.html" class="active">Home</a>
+    <a href="how-it-works.html">How It Works</a>
+    <a href="scam-types.html">Scam Types</a>
+    <a href="why-us.html">Why Us</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
   </div>
-  <div style="display:flex;align-items:center;gap:20px;">
-    <a href="tel:+12894800320" class="nav-phone">
-      <img src="https://flagcdn.com/w40/ca.png" alt="CA"> +1 (289) 480-0320
-    </a>
+  <div class="nav-right">
+    <a href="tel:+12894800320" class="nav-phone"><img src="https://flagcdn.com/w40/ca.png" alt="CA"> +1 (289) 480-0320</a>
     <a href="#consultForm" class="nav-cta">Get Free Consultation</a>
   </div>
 </nav>
-
-<!-- HERO -->
 <section class="hero">
-
-  <!-- LEFT -->
   <div class="hero-left">
-    <h1>Reclaim Your <span>Lost Funds</span></h1>
-    <p class="hero-sub">Only cases with losses from $2,000+</p>
-    <p class="hero-desc">
-      Fell victim to a crypto, trading, or investment scam? Our expert team specializes in recovering funds lost to forex, binary options, romance scams, and more. We've helped thousands of Canadians get their money back with a simple, documentation-led approach.
-    </p>
+    <h1>Recover Your <span>Lost Funds</span></h1>
+    <p class="hero-sub">Accepting cases with documented losses of $2,000 or more</p>
+    <p class="hero-desc">If you've been affected by an online financial fraud — whether through a deceptive trading platform, a cryptocurrency scheme, or another type of scam — our team is here to help. We work alongside legal professionals, financial regulators, and blockchain analysts to build your case and pursue recovery of your funds.</p>
     <div class="hero-buttons">
-      <a href="#consultForm" class="btn-primary">Get A Free Consultation</a>
-      <a href="#" class="btn-secondary">How It Works</a>
+      <a href="#consultForm" class="btn-primary">Get A Free Case Review</a>
+      <a href="how-it-works.html" class="btn-secondary">How It Works</a>
     </div>
     <div class="stats">
       <div class="stat-card">
-        <div class="stat-value"><span>$</span>1.3M+</div>
-        <div class="stat-label">Monthly Return<br>Recovered for clients</div>
+        <div class="stat-value"><span>$</span>1.2M+</div>
+        <div class="stat-label">Pursued Monthly<br>On behalf of our clients</div>
       </div>
       <div class="stat-card">
-        <div class="stat-value">31,837</div>
-        <div class="stat-label">Clients Helped<br>Across Canada</div>
+        <div class="stat-value">28,000+</div>
+        <div class="stat-label">Cases Reviewed<br>Across Canada</div>
       </div>
       <div class="stat-card">
         <div class="stat-value">5<span>+</span> yrs</div>
-        <div class="stat-label">Experience<br>In scam recovery</div>
+        <div class="stat-label">In Operation<br>Fraud recovery services</div>
       </div>
     </div>
   </div>
-
-  <!-- RIGHT: FORM -->
   <div class="hero-right">
     <div class="card">
       <div class="badge">Free Consultation</div>
       <h2>Get Your Case Reviewed</h2>
       <form id="consultForm">
         <div class="row">
-          <div class="field">
-            <label>First Name</label>
-            <input type="text" id="firstName" placeholder="John" required>
-          </div>
-          <div class="field">
-            <label>Last Name</label>
-            <input type="text" id="lastName" placeholder="Smith" required>
-          </div>
+          <div class="field"><label>First Name</label><input type="text" id="firstName" placeholder="John" required></div>
+          <div class="field"><label>Last Name</label><input type="text" id="lastName" placeholder="Smith" required></div>
         </div>
-        <div class="field">
-          <label>Email</label>
-          <input type="email" id="email" placeholder="your@email.com" required>
-        </div>
-        <div class="field">
-          <label>Phone</label>
+        <div class="field"><label>Email</label><input type="email" id="email" placeholder="your@email.com" required></div>
+        <div class="field"><label>Phone</label>
           <div class="phone-wrap">
             <div class="phone-flag"><img src="https://flagcdn.com/w40/ca.png" alt="CA"> +1</div>
             <input type="tel" id="phone" placeholder="(000) 000-0000">
           </div>
         </div>
-        <div class="field">
-          <label>Type of Scam</label>
+        <div class="field"><label>Type of Scam</label>
           <select id="scamType" required>
             <option value="" disabled selected>Select scam type</option>
             <option>Forex trading scam</option>
@@ -210,8 +175,7 @@
           </select>
         </div>
         <div class="row">
-          <div class="field">
-            <label>Amount Lost</label>
+          <div class="field"><label>Amount Lost</label>
             <select id="lossAmount" required>
               <option value="" disabled selected>Select range</option>
               <option>$0 - $999</option>
@@ -223,8 +187,7 @@
               <option>$500,000+</option>
             </select>
           </div>
-          <div class="field">
-            <label>When Did It Occur?</label>
+          <div class="field"><label>When Did It Occur?</label>
             <select id="whenScam" required>
               <option value="" disabled selected>Select timeframe</option>
               <option>Within the last 3 months</option>
@@ -235,8 +198,7 @@
             </select>
           </div>
         </div>
-        <div class="field">
-          <label>Transferred Money With</label>
+        <div class="field"><label>Transferred Money With</label>
           <select id="paymentMethod" required>
             <option value="" disabled selected>Select payment method</option>
             <option>Bank transfer</option>
@@ -248,13 +210,10 @@
             <option>Other</option>
           </select>
         </div>
-        <div class="field">
-          <label>Describe Your Case</label>
-          <textarea id="description" placeholder="Briefly describe what happened, which platform, and when..."></textarea>
-        </div>
+        <div class="field"><label>Describe Your Case</label><textarea id="description" placeholder="Briefly describe what happened, which platform, and when..."></textarea></div>
         <button type="submit" class="submit-btn" id="submitBtn">Request Free Consultation &rarr;</button>
         <p class="error-msg" id="errorMsg">Something went wrong. Please try again.</p>
-        <p class="note">By submitting, you agree to our <a href="#">Privacy Policy</a>. We'll respond within 24 hours.</p>
+        <p class="note">By submitting, you agree to our <a href="privacy-policy.html">Privacy Policy</a>. We'll respond within 24 hours.</p>
       </form>
       <div class="success-msg" id="successMsg">
         <div class="icon">&#10003;</div>
@@ -263,18 +222,19 @@
       </div>
     </div>
   </div>
-
 </section>
-
+<footer class="footer">
+  <div><a href="index.html">Home</a><a href="how-it-works.html">How It Works</a><a href="scam-types.html">Scam Types</a><a href="why-us.html">Why Us</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div>
+  <div class="footer-copy">&copy; 2026 RefundExpertCa. All rights reserved.</div>
+</footer>
+<iframe name="hiddenFrame" style="display:none;"></iframe>
 <script>
   var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw40PbDTnFe32Docr47vXUlO78xMAp_GzfhRXuOXuIOkBeCUsrm4SBMTcH9tiABcBdi/exec";
-
   document.getElementById('consultForm').addEventListener('submit', function(e) {
     e.preventDefault();
     var btn = document.getElementById('submitBtn');
     btn.textContent = 'Sending\u2026';
     btn.classList.add('loading');
-
     var data = {
       firstName: document.getElementById('firstName').value,
       lastName: document.getElementById('lastName').value,
@@ -287,12 +247,10 @@
       paymentMethod: document.getElementById('paymentMethod').value,
       description: document.getElementById('description').value
     };
-
     var form = document.createElement('form');
     form.method = 'POST';
     form.action = APPS_SCRIPT_URL;
     form.target = 'hiddenFrame';
-
     Object.keys(data).forEach(function(key) {
       var input = document.createElement('input');
       input.type = 'hidden';
@@ -300,17 +258,14 @@
       input.value = data[key];
       form.appendChild(input);
     });
-
     document.body.appendChild(form);
     form.submit();
     document.body.removeChild(form);
-
     setTimeout(function() {
       document.getElementById('consultForm').style.display = 'none';
       document.getElementById('successMsg').style.display = 'block';
     }, 1500);
   });
-
   document.getElementById('phone').addEventListener('input', function() {
     var v = this.value.replace(/\D/g, '').substring(0, 10);
     if (v.length >= 6) v = '(' + v.slice(0,3) + ') ' + v.slice(3,6) + '-' + v.slice(6);
@@ -318,6 +273,5 @@
     this.value = v;
   });
 </script>
-<iframe name="hiddenFrame" style="display:none;"></iframe>
 </body>
 </html>

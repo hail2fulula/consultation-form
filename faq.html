@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ - RefundExpert</title>
+<link rel="icon" href="https://refundexpertca.com/favicon.ico?favicon.0b3bf435.ico" sizes="256x256" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --bg: #0a0a0a; --surface: #181818; --surface2: #202020; --border: #2a2a2a; --text: #f0ede8; --text-muted: #6b6b6b; --text-sub: #999; --accent: #c0392b; --accent-light: #e74c3c; --radius: 10px; }
+  body { background: var(--bg); font-family: 'DM Sans', sans-serif; color: var(--text); }
+  .top-bar { background: var(--accent); text-align: center; padding: 8px 20px; font-size: 12px; color: #fff; }
+  .top-bar span { opacity: 0.7; margin: 0 6px; }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 40px; border-bottom: 1px solid var(--border); background: var(--bg); position: sticky; top: 0; z-index: 100; }
+  .logo { font-size: 20px; font-weight: 700; color: var(--text); text-decoration: none; }
+  .logo em { color: var(--accent); font-style: normal; }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a { color: var(--text-sub); text-decoration: none; font-size: 13.5px; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--text); }
+  .nav-right { display: flex; align-items: center; gap: 20px; }
+  .nav-phone { display: flex; align-items: center; gap: 8px; color: var(--text); font-size: 14px; font-weight: 500; text-decoration: none; }
+  .nav-phone img { width: 18px; height: 13px; border-radius: 2px; }
+  .nav-cta { background: var(--accent); color: #fff; padding: 10px 20px; border-radius: var(--radius); font-size: 13px; font-weight: 500; text-decoration: none; }
+  .nav-cta:hover { background: var(--accent-light); }
+  .page-header { text-align: center; padding: 80px 20px 60px; }
+  .page-header h1 { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 700; margin-bottom: 16px; }
+  .page-header h1 span { color: var(--accent-light); }
+  .page-header p { font-size: 16px; color: var(--text-muted); max-width: 600px; margin: 0 auto; line-height: 1.7; }
+  .faq-list { max-width: 760px; margin: 0 auto; padding: 0 20px 80px; }
+  .faq-item { border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; background: var(--surface); }
+  .faq-q { padding: 20px 24px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 15px; font-weight: 500; transition: background 0.2s; }
+  .faq-q:hover { background: var(--surface2); }
+  .faq-q .arrow { font-size: 18px; color: var(--text-muted); transition: transform 0.3s; }
+  .faq-item.open .faq-q .arrow { transform: rotate(180deg); }
+  .faq-a { padding: 0 24px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; }
+  .faq-item.open .faq-a { padding: 0 24px 20px; max-height: 300px; }
+  .faq-a p { font-size: 14px; color: var(--text-sub); line-height: 1.7; }
+  .cta-section { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); text-align: center; padding: 60px 20px; }
+  .cta-section h2 { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 16px; }
+  .cta-section p { color: var(--text-muted); font-size: 15px; margin-bottom: 28px; }
+  .cta-btn { background: var(--accent); color: #fff; padding: 15px 32px; border-radius: var(--radius); font-size: 15px; font-weight: 500; text-decoration: none; display: inline-block; }
+  .cta-btn:hover { background: var(--accent-light); }
+  .footer { padding: 40px; text-align: center; font-size: 13px; color: var(--text-muted); border-top: 1px solid var(--border); }
+  .footer a { color: var(--text-sub); text-decoration: none; margin: 0 12px; }
+  .footer a:hover { color: var(--text); }
+  .footer-copy { margin-top: 16px; font-size: 12px; }
+  @media (max-width: 768px) { .nav-links { display: none; } .page-header h1 { font-size: 30px; } .nav { padding: 14px 20px; } }
+</style>
+</head>
+<body>
+<div class="top-bar">Only cases with losses from $2,000+ <span>&bull;</span> Free consultation <span>&bull;</span> Trusted by thousands across Canada</div>
+<nav class="nav">
+  <a href="index.html" class="logo">Refund<em>Expert</em>Ca</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="how-it-works.html">How It Works</a>
+    <a href="scam-types.html">Scam Types</a>
+    <a href="why-us.html">Why Us</a>
+    <a href="faq.html" class="active">FAQ</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="nav-right">
+    <a href="tel:+12894800320" class="nav-phone"><img src="https://flagcdn.com/w40/ca.png" alt="CA"> +1 (289) 480-0320</a>
+    <a href="index.html" class="nav-cta">Get Free Consultation</a>
+  </div>
+</nav>
+<section class="page-header">
+  <h1>Frequently Asked <span>Questions</span></h1>
+  <p>We understand you have questions before getting started. Here are answers to the most common ones we receive.</p>
+</section>
+<section class="faq-list">
+  <div class="faq-item"><div class="faq-q">What does the recovery process involve? <span class="arrow">&#9660;</span></div><div class="faq-a"><p>Our process begins with a free case review where we assess your situation. If we determine your case is viable, we move into evidence gathering, investigation, and active pursuit of your funds through financial institutions, payment processors, and regulatory channels. Each case is different, and we tailor our approach accordingly.</p></div></div>
+  <div class="faq-item"><div class="faq-q">How long does the process typically take? <span class="arrow">&#9660;</span></div><div class="faq-a"><p>Timelines vary significantly based on the complexity of the case, the type of fraud involved, the jurisdictions in play, and the responsiveness of financial institutions. Some cases resolve within weeks, while more complex international matters may take several months. We provide realistic timeframe estimates during your initial consultation.</p></div></div>
+  <div class="faq-item"><div class="faq-q">What types of fraud do you handle? <span class="arrow">&#9660;</span></div><div class="faq-a"><p>We work with clients affected by forex trading scams, cryptocurrency fraud, romance scams, binary options schemes, phishing attacks, employment fraud, and other forms of online financial deception. If you're unsure whether your situation qualifies, we encourage you to reach out — the initial review is free.</p></div></div>
+  <div class="faq-item"><div class="faq-q">What are your fees? <span class="arrow">&#9660;</span></div><div class="faq-a"><p>The initial case review is always free and comes with no obligations. If we take on your case, our fee structure is explained clearly before you commit to anything. We believe in full transparency — there are no hidden costs or surprise charges at any point in the process.</p></div></div>
+  <div class="faq-item"><div class="faq-q">What documents do I need to provide? <span class="arrow">&#9660;</span></div><div class="faq-a"><p>Helpful documentation includes transaction records (bank statements, transfer confirmations), communication logs with the fraudulent entity (emails, chat messages), screenshots of the platform or website, and any account details or reference numbers. Don't worry if you don't have everything — we'll guide you through what's needed.</p></div></div>
+  <div class="faq-item"><div class="faq-q">Is my personal information protected? <span class="arrow">&#9660;</span></div><div class="faq-a"><p>Absolutely. We take data security seriously. All client information is handled in accordance with Canadian privacy legislation. Your personal details and case materials are stored securely and are only shared with relevant parties as required for the recovery process, with your consent.</p></div></div>
+  <div class="faq-item"><div class="faq-q">Can you guarantee that my funds will be recovered? <span class="arrow">&#9660;</span></div><div class="faq-a"><p>No legitimate recovery service can guarantee a specific outcome. What we can promise is a thorough, professional effort backed by experienced investigators and legal professionals. We provide honest assessments of each case's viability and keep you informed throughout the entire process.</p></div></div>
+  <div class="faq-item"><div class="faq-q">Can you help if the scam originated outside of Canada? <span class="arrow">&#9660;</span></div><div class="faq-a"><p>Yes. Online fraud frequently involves international entities. We have a network of partners across multiple jurisdictions that enables us to pursue cross-border cases. During your consultation, we'll assess the international aspects of your situation and explain how they affect the recovery approach.</p></div></div>
+</section>
+<section class="cta-section">
+  <h2>Still Have Questions?</h2>
+  <p>Our team is happy to discuss your specific situation. Reach out for a free, confidential consultation.</p>
+  <a href="index.html" class="cta-btn">Get Free Case Review &rarr;</a>
+</section>
+<footer class="footer">
+  <div><a href="index.html">Home</a><a href="how-it-works.html">How It Works</a><a href="scam-types.html">Scam Types</a><a href="why-us.html">Why Us</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div>
+  <div class="footer-copy">&copy; 2026 RefundExpertCa. All rights reserved.</div>
+</footer>
+<script>
+document.querySelectorAll('.faq-q').forEach(function(q) {
+  q.addEventListener('click', function() { this.parentElement.classList.toggle('open'); });
+});
+</script>
+</body>
+</html>

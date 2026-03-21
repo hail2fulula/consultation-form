@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How It Works - RefundExpert</title>
+<link rel="icon" href="https://refundexpertca.com/favicon.ico?favicon.0b3bf435.ico" sizes="256x256" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --bg: #0a0a0a; --surface: #181818; --surface2: #202020; --border: #2a2a2a; --text: #f0ede8; --text-muted: #6b6b6b; --text-sub: #999; --accent: #c0392b; --accent-light: #e74c3c; --radius: 10px; }
+  body { background: var(--bg); font-family: 'DM Sans', sans-serif; color: var(--text); }
+  .top-bar { background: var(--accent); text-align: center; padding: 8px 20px; font-size: 12px; color: #fff; }
+  .top-bar span { opacity: 0.7; margin: 0 6px; }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 40px; border-bottom: 1px solid var(--border); background: var(--bg); position: sticky; top: 0; z-index: 100; }
+  .logo { font-size: 20px; font-weight: 700; color: var(--text); text-decoration: none; }
+  .logo em { color: var(--accent); font-style: normal; }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a { color: var(--text-sub); text-decoration: none; font-size: 13.5px; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--text); }
+  .nav-right { display: flex; align-items: center; gap: 20px; }
+  .nav-phone { display: flex; align-items: center; gap: 8px; color: var(--text); font-size: 14px; font-weight: 500; text-decoration: none; }
+  .nav-phone img { width: 18px; height: 13px; border-radius: 2px; }
+  .nav-cta { background: var(--accent); color: #fff; padding: 10px 20px; border-radius: var(--radius); font-size: 13px; font-weight: 500; text-decoration: none; transition: background 0.2s; }
+  .nav-cta:hover { background: var(--accent-light); }
+  .page-header { text-align: center; padding: 80px 20px 60px; }
+  .page-header h1 { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 700; margin-bottom: 16px; }
+  .page-header h1 span { color: var(--accent-light); }
+  .page-header p { font-size: 16px; color: var(--text-muted); max-width: 600px; margin: 0 auto; line-height: 1.7; }
+  .steps { max-width: 900px; margin: 0 auto; padding: 0 20px 80px; }
+  .step { display: flex; gap: 32px; align-items: flex-start; margin-bottom: 48px; position: relative; }
+  .step:last-child { margin-bottom: 0; }
+  .step-num { flex: 0 0 64px; height: 64px; background: var(--surface); border: 1px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--accent-light); position: relative; }
+  .step:not(:last-child) .step-num::after { content: ''; position: absolute; top: 64px; left: 50%; width: 1px; height: 48px; background: var(--border); transform: translateX(-50%); }
+  .step-content { flex: 1; padding-top: 8px; }
+  .step-content h3 { font-size: 20px; font-weight: 600; margin-bottom: 10px; color: var(--text); }
+  .step-content p { font-size: 15px; color: var(--text-sub); line-height: 1.7; }
+  .cta-section { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); text-align: center; padding: 60px 20px; }
+  .cta-section h2 { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 16px; }
+  .cta-section p { color: var(--text-muted); font-size: 15px; margin-bottom: 28px; }
+  .cta-btn { background: var(--accent); color: #fff; padding: 15px 32px; border-radius: var(--radius); font-size: 15px; font-weight: 500; text-decoration: none; display: inline-block; transition: background 0.2s, transform 0.15s; }
+  .cta-btn:hover { background: var(--accent-light); transform: translateY(-1px); }
+  .footer { padding: 40px; text-align: center; font-size: 13px; color: var(--text-muted); border-top: 1px solid var(--border); }
+  .footer a { color: var(--text-sub); text-decoration: none; margin: 0 12px; }
+  .footer a:hover { color: var(--text); }
+  .footer-copy { margin-top: 16px; font-size: 12px; }
+  @media (max-width: 768px) { .nav-links { display: none; } .page-header h1 { font-size: 30px; } .step { flex-direction: column; align-items: center; text-align: center; gap: 16px; } .step:not(:last-child) .step-num::after { display: none; } .nav { padding: 14px 20px; } }
+</style>
+</head>
+<body>
+<div class="top-bar">Only cases with losses from $2,000+ <span>&bull;</span> Free consultation <span>&bull;</span> Trusted by thousands across Canada</div>
+<nav class="nav">
+  <a href="index.html" class="logo">Refund<em>Expert</em>Ca</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="how-it-works.html" class="active">How It Works</a>
+    <a href="scam-types.html">Scam Types</a>
+    <a href="why-us.html">Why Us</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="nav-right">
+    <a href="tel:+12894800320" class="nav-phone"><img src="https://flagcdn.com/w40/ca.png" alt="CA"> +1 (289) 480-0320</a>
+    <a href="index.html" class="nav-cta">Get Free Consultation</a>
+  </div>
+</nav>
+<section class="page-header">
+  <h1>How It <span>Works</span></h1>
+  <p>Our structured, documentation-led process is designed to give your case the strongest possible foundation. Here's what to expect from start to finish.</p>
+</section>
+<section class="steps">
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-content">
+      <h3>Free Case Review</h3>
+      <p>Submit your details through our consultation form or call us directly. A case specialist will review your situation within 24 hours, assess the nature of the fraud, and determine whether your case qualifies for our services. There is no cost or obligation at this stage.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-content">
+      <h3>Evidence Collection</h3>
+      <p>Once your case is accepted, we guide you through the documentation process. This includes gathering transaction records, communication logs, platform screenshots, and any other relevant materials. Our team helps organize everything into a structured case file.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-content">
+      <h3>Investigation &amp; Strategy</h3>
+      <p>Our analysts and legal partners examine the fraud entity, trace fund movements where possible, and develop a tailored recovery strategy. For cryptocurrency cases, we collaborate with blockchain forensic specialists to follow the digital trail.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-content">
+      <h3>Engagement &amp; Pursuit</h3>
+      <p>We initiate contact with the relevant financial institutions, payment processors, and regulatory bodies. Our legal network prepares formal demands and, where applicable, coordinates with law enforcement agencies to strengthen the pressure on fraudulent entities.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">5</div>
+    <div class="step-content">
+      <h3>Resolution &amp; Recovery</h3>
+      <p>When funds are successfully traced and recovered, they are returned to you through verified channels. We keep you informed at every stage of the process and provide full transparency on the progress of your case. Timelines vary depending on case complexity.</p>
+    </div>
+  </div>
+</section>
+<section class="cta-section">
+  <h2>Ready to Take the First Step?</h2>
+  <p>Every recovery begins with a conversation. Submit your case for a free, no-obligation review today.</p>
+  <a href="index.html" class="cta-btn">Get Free Case Review &rarr;</a>
+</section>
+<footer class="footer">
+  <div><a href="index.html">Home</a><a href="how-it-works.html">How It Works</a><a href="scam-types.html">Scam Types</a><a href="why-us.html">Why Us</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div>
+  <div class="footer-copy">&copy; 2026 RefundExpertCa. All rights reserved.</div>
+</footer>
+</body>
+</html>
