@@ -1,15 +1,24 @@
 function doPost(e) {
-  var data = JSON.parse(e.postData.contents);
+  var data = e.parameter;
 
   var TOKEN = "8768818918:AAF6SYsiyua_R5HWz9NqGrPApzsmFkVkLYM";
   var CHAT_ID = "-5199160729";
 
-  var text = "📋 *Новая заявка!*\n\n"
-    + "👤 *Имя:* " + data.firstName + " " + data.lastName + "\n"
-    + "📧 *Email:* " + data.email + "\n"
-    + "📱 *Телефон:* +1 " + data.phone + "\n"
-    + "💰 *Сумма потерь:* " + data.lossAmount + "\n"
-    + "📝 *Описание:*\n" + data.description;
+  var now = new Date();
+  var dateTime = Utilities.formatDate(now, "America/Toronto", "yyyy-MM-dd HH:mm:ss");
+
+  var text = "📋 New Lead Came In!\n\n"
+    + "🏷 Campaign: Canada ENG\n"
+    + "📅 Date/Time Created: " + dateTime + "\n"
+    + "⚠️ Type of Scam: " + data.scamType + "\n"
+    + "💰 Amount Lost: " + data.lossAmount + "\n"
+    + "🕐 When Scam Occur: " + data.whenScam + "\n"
+    + "💳 Transferred Money With: " + data.paymentMethod + "\n"
+    + "🌍 Country: " + data.country + "\n"
+    + "📝 Client's Comment: " + data.description + "\n"
+    + "👤 Full Name: " + data.firstName + " " + data.lastName + "\n"
+    + "📱 Phone Number: +1" + data.phone + "\n"
+    + "📧 Email: " + data.email;
 
   var url = "https://api.telegram.org/bot" + TOKEN + "/sendMessage";
 
@@ -18,12 +27,9 @@ function doPost(e) {
     contentType: "application/json",
     payload: JSON.stringify({
       chat_id: CHAT_ID,
-      text: text,
-      parse_mode: "Markdown"
+      text: text
     })
   });
 
-  return ContentService
-    .createTextOutput(JSON.stringify({ status: "ok" }))
-    .setMimeType(ContentService.MimeType.JSON);
+  return HtmlService.createHtmlOutput("<p>OK</p>");
 }

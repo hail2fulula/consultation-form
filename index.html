@@ -4,8 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Free Consultation - RefundExpert</title>
+<meta name="description" content="Lost money to an online scam? RefundExpertCa helps Canadian victims pursue recovery of funds lost to forex, crypto, romance, and other financial fraud. Free case review.">
 <link rel="icon" href="https://refundexpertca.com/favicon.ico?favicon.0b3bf435.ico" sizes="256x256" type="image/x-icon">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- Google Ads - Replace YOUR_ID with actual Google Ads ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-XXXXXXXXX');</script>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -86,6 +90,17 @@
   .footer a { color: var(--text-sub); text-decoration: none; margin: 0 12px; }
   .footer a:hover { color: var(--text); }
   .footer-copy { margin-top: 16px; font-size: 12px; }
+  .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .burger span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: 0.3s; }
+  .mobile-menu { display: none; background: var(--surface); border-bottom: 1px solid var(--border); padding: 16px 40px; }
+  .mobile-menu a { display: block; color: var(--text-sub); text-decoration: none; font-size: 14px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+  .mobile-menu a:last-child { border-bottom: none; }
+  .mobile-menu a:hover { color: var(--text); }
+  .cookie-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: var(--surface); border-top: 1px solid var(--border); padding: 12px 24px; font-size: 12px; color: var(--text-muted); z-index: 200; }
+  .cookie-bar-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .cookie-bar a { color: var(--text-sub); }
+  .cookie-btn { background: var(--surface2); color: var(--text-sub); border: 1px solid var(--border); padding: 6px 16px; border-radius: 6px; font-size: 12px; cursor: pointer; white-space: nowrap; }
+  .cookie-btn:hover { background: var(--border); }
   @media (max-width: 960px) {
     .hero { flex-direction: column; align-items: center; gap: 40px; padding: 40px 20px; }
     .hero-left { max-width: 100%; text-align: center; padding-top: 0; }
@@ -94,6 +109,7 @@
     .stats { justify-content: center; }
     .hero-right { flex: none; width: 100%; max-width: 480px; }
     .nav-links { display: none; }
+    .burger { display: flex; }
   }
   @media (max-width: 480px) {
     .card { padding: 28px 20px; }
@@ -107,7 +123,7 @@
 </style>
 </head>
 <body>
-<div class="top-bar">Only cases with losses from $2,000+ <span>&bull;</span> Free consultation <span>&bull;</span> Trusted by thousands across Canada</div>
+<div class="top-bar">Only cases with losses from $2,000+ <span>&bull;</span> Free consultation <span>&bull;</span> Serving clients across Canada</div>
 <nav class="nav">
   <a href="index.html" class="logo">Refund<em>Expert</em>Ca</a>
   <div class="nav-links">
@@ -118,11 +134,20 @@
     <a href="faq.html">FAQ</a>
     <a href="contact.html">Contact</a>
   </div>
+  <div class="burger" onclick="document.querySelector('.mobile-menu').style.display=document.querySelector('.mobile-menu').style.display==='block'?'none':'block'"><span></span><span></span><span></span></div>
   <div class="nav-right">
     <a href="tel:+12894800320" class="nav-phone"><img src="https://flagcdn.com/w40/ca.png" alt="CA"> +1 (289) 480-0320</a>
     <a href="#consultForm" class="nav-cta">Get Free Consultation</a>
   </div>
 </nav>
+<div class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="how-it-works.html">How It Works</a>
+  <a href="scam-types.html">Scam Types</a>
+  <a href="why-us.html">Why Us</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
+</div>
 <section class="hero">
   <div class="hero-left">
     <h1>Recover Your <span>Lost Funds</span></h1>
@@ -134,18 +159,19 @@
     </div>
     <div class="stats">
       <div class="stat-card">
-        <div class="stat-value"><span>$</span>1.2M+</div>
+        <div class="stat-value"><span>$</span>1.2M+*</div>
         <div class="stat-label">Pursued Monthly<br>On behalf of our clients</div>
       </div>
       <div class="stat-card">
-        <div class="stat-value">28,000+</div>
+        <div class="stat-value">28,000+*</div>
         <div class="stat-label">Cases Reviewed<br>Across Canada</div>
       </div>
       <div class="stat-card">
-        <div class="stat-value">5<span>+</span> yrs</div>
+        <div class="stat-value">5<span>+</span> yrs*</div>
         <div class="stat-label">In Operation<br>Fraud recovery services</div>
       </div>
     </div>
+    <p style="font-size:10px;color:var(--text-muted);margin-top:12px;">*Based on internal company records, 2021–2025. Past performance does not guarantee future results.</p>
   </div>
   <div class="hero-right">
     <div class="card">
@@ -225,8 +251,16 @@
 </section>
 <footer class="footer">
   <div><a href="index.html">Home</a><a href="how-it-works.html">How It Works</a><a href="scam-types.html">Scam Types</a><a href="why-us.html">Why Us</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div>
+  <div style="margin-top:16px;font-size:12px;color:var(--text-muted);line-height:1.6;">support@refundexpertca.com &bull; +1 (289) 480-0320 &bull; 100 King Street West, Suite 5600, Toronto, ON M5X 1C9</div>
+  <div style="margin-top:12px;font-size:11px;color:#555;line-height:1.5;">RefundExpertCa is not a law firm and does not provide legal advice. Legal services are provided by independent licensed professionals. We do not guarantee any specific outcome. Results depend on individual case circumstances.</div>
   <div class="footer-copy">&copy; 2026 RefundExpertCa. All rights reserved.</div>
 </footer>
+<div class="cookie-bar" id="cookieBar">
+  <div class="cookie-bar-inner">
+    <span>We use cookies to improve your experience. By continuing to browse, you agree to our <a href="privacy-policy.html">Privacy Policy</a>.</span>
+    <button class="cookie-btn" onclick="document.getElementById('cookieBar').style.display='none';localStorage.setItem('cookies_accepted','1');">Got it</button>
+  </div>
+</div>
 <iframe name="hiddenFrame" style="display:none;"></iframe>
 <script>
   var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw40PbDTnFe32Docr47vXUlO78xMAp_GzfhRXuOXuIOkBeCUsrm4SBMTcH9tiABcBdi/exec";
@@ -272,6 +306,10 @@
     else if (v.length >= 3) v = '(' + v.slice(0,3) + ') ' + v.slice(3);
     this.value = v;
   });
+  // Cookie bar
+  if(!localStorage.getItem('cookies_accepted')){document.getElementById('cookieBar').style.display='block';}
+  // Google Ads conversion on form submit - uncomment and replace with actual values
+  // gtag('event','conversion',{send_to:'AW-XXXXXXXXX/YYYYYY'});
 </script>
 </body>
 </html>
